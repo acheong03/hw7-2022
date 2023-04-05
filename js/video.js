@@ -20,26 +20,23 @@ function pauseVid() {
 } 
 
 function decreaseSpeed() {
-	video.playbackRate = video.playbackRate * 0.8;
-	console.log("Speed is " + video.playbackRate);
+	video.playbackRate -= 0.1;
+	console.log("Slow Down");
 } 
 
 function increaseSpeed() {
-	video.playbackRate = video.playbackRate * 1.25;
-	console.log("Speed is " + video.playbackRate);
+	video.playbackRate += 0.1;
+	console.log("Speed Up");
 } 
 
 function skipAhead() {
-	// skip 60 seconds
 	video.currentTime = video.currentTime + 10;
 	if (video.ended) {
-		// reset playback
 		video.load();
 		video.play();
-		// reset speed
 		playbackRate = 1;
 	}
-	console.log("Current location is " + video.currentTime);
+	console.log("Skip Ahead");
 } 
 
 function mute() { 
@@ -54,22 +51,19 @@ function mute() {
 }
 
 function changeVolume() {
-	console.log(volumeSlider.value);
+	console.log(slider.value);
 	var slider_val = document.querySelector('#volume').innerHTML; 
-	// update slider value
-	slider_val = volumeSlider.value;
-	// update new video volume out of 100
+	slider_val = slider.value;
 	video.volume = slider_val / 100;
-	// update html div
 	document.querySelector('#volume').innerHTML = slider_val + '%';
 }
 	
 function vintage() { 
-	video.classList.add("vintage");
-	console.log("In vintage");
+	video.classList.add("oldSchool");
+	console.log("oldSchool");
 }
 
 function orig() {
-	video.classList.remove("vintage");
+	video.classList.remove("oldSchool");
 	console.log("Original");
 }

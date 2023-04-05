@@ -10,11 +10,12 @@
 <main>
 	<h1>JavaScript Video Controls</h1>
 	<div class = "options">
-		<button  id = "play">Play Video</button>
-		<button  id = "pause">Pause Video</button>
-		<button  id = "slower">Slow Down</button>
-		<button  id = "faster">Speed Up</button>
-		<button  id = "skip">Skip Ahead</button>
+		<button onclick="playVid()" type="button" class = "play">Play Video</button>
+		<button onclick="pauseVid()" type="button" class = "pause">Pause Video</button>
+		<button onclick="decreaseSpeed()" type="button">Slow Down</button>
+		<button onclick="increaseSpeed()" type="button">Speed Up</button>
+		<button onclick="skipAhead()" type="button">Skip Ahead</button>
+
 	</div>
 
 	<figure>
@@ -32,13 +33,13 @@
 		</video>
 		<figcaption>[The Michigan Marching Band]</figcaption>
 		</figure> 
-	<button id="mute">Mute</button><br>
+	<button id="mute" onclick="mute()" type="button">Mute</button><br>
 
 	<label for="slider">Volume</label>: 0 <input type="range" id="slider" min="0" max="100" value="100" step="10"> 100%<br>
 	<div>Volume is: <span id = "volume"> </span><br><br></div>
 
-	<button id = "vintage">Old School</button>
-	<button id = "orig">Original</button>
+	<button onclick="vintage()" type="button">Old School</button>
+	<button onclick="orig()" type="button">Original</button>
 
 	<p>Video courtesy of Allison Sweet.</p>
 
